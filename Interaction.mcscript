@@ -1,0 +1,205 @@
+[반복형] [무조건적] [항상 활성화]
+입력창 : execute as @a[nbt={Inventory:[{id:"minecraft:compass",Count:1b,Slot:-106b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 스폰 귀환서 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"어디있든 스폰으로 귀환할 수 있다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}]}] run tag @s add T
+// tp
+[연쇄형] [조건적] [항상 활성화]
+입력창 : item replace entity @a[tag=T] weapon.mainhand with minecraft:air
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : item replace entity @a[tag=T] weapon.offhand with minecraft:air
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : execute as @a[tag=T] run tp @s 296 73 -519
+
+[연쇄형] [무조건적] [항상 활성화]
+입력창 : tag @a remove T
+
+// 네더라이트 형판
+[반복형] [무조건적] [항상 활성화]
+입력창 : execute as @a[nbt={Inventory:[{id:"minecraft:shield",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 대장장이 형판 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"재산 공유할 수 있는 사람 외 공유 금지","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 슬아 찾아오기","italic":"false", "color":"yellow"}']}}}]}] run tag @s add H
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : item replace entity @a[tag=H] weapon.mainhand with minecraft:air
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : item replace entity @a[tag=H] weapon.offhand with minecraft:air
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : execute as @a[tag=H] run give @s minecraft:netherite_upgrade_smithing_template
+
+[연쇄형] [무조건적] [항상 활성화]
+입력창 : tag @a remove H
+
+//신속
+[반복형] [무조건적] [항상 활성화]
+입력창 : execute as @a[nbt={Inventory:[{id:"minecraft:paper",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 누구보다 빠르게 스피드 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"5분간 신속 2 효과를 받는다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}]}] run tag @s add S
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : item replace entity @a[tag=S] weapon.mainhand with minecraft:air
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : item replace entity @a[tag=S] weapon.offhand with minecraft:air
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : execute as @a[tag=S] run effect give @s minecraft:speed 300 1 true
+
+[연쇄형] [무조건적] [항상 활성화]
+입력창 : tag @a remove S
+
+//가벼운 착지
+[반복형] [무조건적] [항상 활성화]
+입력창 : execute as @a[nbt={Inventory:[{id:"minecraft:paper",Count:1b,Slot:-106b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 가벼운 몸 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"5분간 가벼운 착지 효과를 받는다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}]}] run tag @s add slow
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : item replace entity @a[tag=slow] weapon.mainhand with minecraft:air
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : item replace entity @a[tag=slow] weapon.offhand with minecraft:air
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : execute as @a[tag=slow] run effect give @s minecraft:slow_falling 300 0 true
+
+[연쇄형] [무조건적] [항상 활성화]
+입력창 : tag @a remove slow
+
+//야간투시
+[반복형] [무조건적] [항상 활성화]
+입력창 : execute as @a[nbt={Inventory:[{id:"minecraft:spyglass",Count:1b,Slot:-106b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 맑은 눈동자 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"30분간 야간투시를 받는다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}]}] run tag @s add nig
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : item replace entity @a[tag=nig] weapon.mainhand with minecraft:air
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : item replace entity @a[tag=nig] weapon.offhand with minecraft:air
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : execute as @a[tag=nig] run effect give @s minecraft:nig 300 0 true
+
+[연쇄형] [무조건적] [항상 활성화]
+입력창 : tag @a remove nig
+
+// 경험치
+[반복형] [무조건적] [항상 활성화]
+입력창 : execute as @a[nbt={Inventory:[{id:"minecraft:experience_bottle",Count:1b,Slot:-106b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 뾰로롱 레벨 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"경험치 상관없이 4레벨이 오른다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}]}] run tag @s add L
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : item replace entity @a[tag=L] weapon.mainhand with minecraft:air
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : item replace entity @a[tag=L] weapon.offhand with minecraft:air
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : execute as @a[tag=L] run xp add @s 4 levels
+
+[연쇄형] [무조건적] [항상 활성화]
+입력창 : tag @a remove L
+
+
+
+
+
+
+execute as @a[nbt={Inventory:[{id:"minecraft:paper",Count:1b,Slot:-106b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 배가 빵빵 포화 쿠폰 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"10분 동안 배고픔이 닳지 않는다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}]}] run tag @s add H
+
+execute as @a[nbt={Inventory:[{id:"minecraft:paper",Count:1b,Slot:-106b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 가벼운 몸 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"5분간 가벼운 착지 효과를 받는다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}]}] run tag @s add slow
+
+execute as @a[nbt={Inventory:[{id:"minecraft:paper",Count:1b,Slot:-106b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 누구보다 빠르게 스피드 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"5분간 신속 2 효과를 받는다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}]}] run tag @s add S
+
+
+
+
+
+// 랜덤 쿠폰      je 에서 실행 불가
+scoreboard objective add ran dummy
+
+반복형 항상 사용
+scoreboard players random cave ran 1 100
+
+[반복형] [무조건적] [항상 활성화]
+입력창 : execute as @a[nbt={Inventory:[{id:"minecraft:paper",Count:1b,Slot:-106b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 뽑기 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"0 1 2 잃거나 두배가 되거나 본전을 뽑는 뽑기","italic":"false", "color":"aqua"}',
+'{"text":"확률 [ 0 - 4/9, 1 - 1/9 2 - 4/9 ]","italic":"false", "color":"aqua"}',
+'{"text":"= 쿠폰을 가지고 JABAEK에게 말하기! 없으면 디코나 톡 =","italic":"false", "color":"yellow"}']}}]}] run tag @s add RR
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : replaceitem entity @a[tag=RR] weapon.mainhand minecraft:air
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : replaceitem entity @a[tag=RR] weapon.offhand air
+
+[반복형] [무조건적] [항상 활성화]
+scoreboard players random cave ran 1 100
+
+[연쇄형] [무조건적] [항상 활성화]
+scoreboard players test cave 1 30  //40%
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : execute as @a[tag=RR] run give minecraft:air
+
+[연쇄형] [무조건적] [항상 활성화]
+scoreboard players test cave 31 60  //40%
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : execute as @a[tag=RR] run give minecraft:gold_nugget{Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}
+
+[연쇄형] [무조건적] [항상 활성화]
+scoreboard players test cave 61 91 //40%
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : execute as @a[tag=RR] run give minecraft:gold_nugget{Count:2b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}
+
+[연쇄형] [무조건적] [항상 활성화]
+scoreboard players test cave 92 100  //40%
+
+[연쇄형] [조건적] [항상 활성화]
+입력창 : execute as @a[tag=RR] run give minecraft:gold_nugget{Count:3b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}
+
+[연쇄형] [무조건적] [항상 활성화]
+입력창 : tag @a remove RR
+
+
+
+effect give - minecraft:saturation 12000 0 true
+
+xp add - 5 levels

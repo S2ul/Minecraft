@@ -1,0 +1,354 @@
+ /summon villager ~ ~ ~ {VillagerData:{level:99},NoAI:1,Offers:{Recipes:[{buy:{id:주민이 살 아이템,Count:개수},sell:{id:주민이 팔 아이템,Count:개수},rewardExp:0b,maxUses:1000000}]}}
+
+id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}
+
+id:"minecraft:iron_nugget",Count:10b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}
+
+/give JABAEK minecraft:player_head{SkullOwner:" 닉네임"}
+/item replace entity wotjr402 armor.head with minecraft:sunflower
+
+/data merge block <x> <y> <z> {Lock:"KEY"}
+♪ 우리의 모든 것 ♬
+
+data modify entity @e[tag=min,limit=1] Offers.Recipes[] set value {buy:{id:item,Count:1b,tag:{}},sell:{}, maxUses:999999, xp:0, rewardExp:0}
+
+-금은방-
+핀 40 -> 만득 1
+만득1 -> 핀 40
+다이아 32 -> 핀 20
+철 40 금 32 -> 핀 10
+구리 2세트 -> 핀 8
+네더라이트 주괴 10개 -> 만득 1
+
+-잡화점-
+만득 1 ->스폰 귀환서
+만득 1 ->맑은 눈동자(야간투시)
+핀 20 -> 경험치 병 3개
+
+-농산물-
+수박 두세트 -> 핀 1
+감자 두세트 -> 여기서만 사고팔수있는 독감자
+독감자 5 -> 핀 1
+당근 두세트 -> 핀 1
+빵 한세트 21개 -> 핀 2
+-금은방-
+핀 40 -> 만득 1
+만득1 -> 핀 40
+다이아 32 -> 핀 20
+철 40 금 32 -> 핀 10
+구리 2세트 -> 핀 8
+네더라이트 주괴 10개 -> 만득 1
+
+-잡화점-
+만득 1 ->스폰 귀환서
+만득 1 ->맑은 눈동자(야간투시)
+핀 20 -> 경험치 병 3개
+
+-농산물-
+수박 한세트 여기서만 사고팔수있는 독감자 -> 핀 1
+감자 두세트 -> 여기서만 사고팔수있는 독감자
+독감자 5 -> 핀 1
+당근 두세트 -> 핀 1
+빵 한세트 21개 -> 핀1
+
+수박 - Melon
+감자 - Potato
+당근 - Carrot
+빵 - Bread
+
+//   광물
+//ai 끔, 무적, 사라지지 않음, 회전, 이름과 태그   /fill 1731 112 -312
+summon villager 1731 112 -312 {NoAI:1d,Silent:1b,Invulnerable:1b,Tags:["min"],
+    CustomName:'{"text":"↓= 금 은 방 =↓","bold":true}',VillagerData:{level:99,profession:"minecraft:weaponsmith"}}
+
+//상품을 팔 수 있는 레시피 4자리
+data modify entity @e[tag=min,limit=1] Offers.Recipes set value [{},{},{},{},{},{}]
+
+data modify entity @e[tag=min,limit=1] Offers.Recipes[0] set value 
+{buy:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}},
+sell:{id:"minecraft:iron_nugget",Count:30b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=min,limit=1] Offers.Recipes[1] set value 
+{buy:{id:"minecraft:iron_nugget",Count: 30b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}},
+sell:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=min,limit=1] Offers.Recipes[2] set value 
+{buy:{id:"minecraft:diamond",Count:32b},
+sell:{id:"minecraft:iron_nugget",Count:20b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=min,limit=1] Offers.Recipes[3] set value 
+{buy:{id:"minecraft:iron_ingot",Count:40b}, buyB:{id:"minecraft:gold_ingot",Count:32b},
+sell:{id:"minecraft:iron_nugget",Count:10b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=min,limit=1] Offers.Recipes[4] set value 
+{buy:{id:"minecraft:copper_ingot",Count:64b}, buyB:{id:"minecraft:copper_ingot",Count:64b},
+sell:{id:"minecraft:iron_nugget",Count:8b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=min,limit=1] Offers.Recipes[5] set value 
+{buy:{id:"minecraft:netherite_ingot",Count:10b},
+sell:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+
+//  잡화점
+//ai 끔, 무적, 사라지지 않음, 회전, 이름과 태그  /fill 1722 112 -312
+summon villager 1722 112 -312 {NoAI:1d,Silent:1b,Invulnerable:1b,Tags:["all"],
+    CustomName:'{"text":"↓= 잡 화 점 =↓","bold":true}',VillagerData:{level:99,profession:"minecraft:Librarian"}}
+
+//상품을 팔 수 있는 레시피 4자리
+data modify entity @e[tag=all,limit=1] Offers.Recipes set value [{},{},{},{},{},{}]
+
+data modify entity @e[tag=all,limit=1] Offers.Recipes[0] set value {buy:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:"minecraft:compass",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 스폰 귀환서 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"어디있든 스폰으로 귀환할 수 있다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=all,limit=1] Offers.Recipes[1] set value {buy:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:"minecraft:spyglass",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 맑은 눈동자 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"30분간 야간투시를 받는다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=all,limit=1] Offers.Recipes[2] set value {buy:{id:"minecraft:iron_nugget",Count:20b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:experience_bottle",Count:1b,Slot:-106b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 뾰로롱 레벨 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"경험치 상관없이 4레벨이 오른다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=all,limit=1] Offers.Recipes[3] set value {buy:{id:"minecraft:iron_nugget",Count:2b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:light",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 조명 작업 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"보이지 않는 조명을 달아드려요 층 당 1장","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 뜌라 찾아오기","italic":"false", "color":"yellow"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=all,limit=1] Offers.Recipes[4] set value {buy:{id:"minecraft:iron_nugget",Count:2b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:item_frame",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 투명 액자 10개 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"투명 액자 팝니다~","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 뜌라 찾아오기","italic":"false", "color":"yellow"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=all,limit=1] Offers.Recipes[5] set value {buy:{id:"minecraft:iron_nugget",Count:3b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:tripwire_hook",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 개인 금고 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"열쇠를 들고 있어야 열리는 상자","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 뜌라 찾아오기","italic":"false", "color":"yellow"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=all,limit=1] Offers.Recipes[6] set value {buy:{id:"minecraft:gold_nugget",Count:5b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:"minecraft:shield",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 대장장이 형판 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"재산 공유할 수 있는 사람 외 공유 금지","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 슬아 찾아오기","italic":"false", "color":"yellow"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=all,limit=1] Offers.Recipes[6] set value 
+{buy:{id:"minecraft:gold_nugget",Count:15b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+buyB:{id:"minecraft:iron_nugget",Count:15b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}'}, 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}},
+sell:{id:"minecraft:enchanted_book",Count:1b,tag:{StoredEnchantments:[{id:"minecraft:mending",lvl:0s}]}}, maxUses:999999, xp:0, rewardExp:0}
+
+
+
+sell:{id:"minecraft:enchanted_book",Count:1b,tag:{StoredEnchantments:[{id:"minecraft:mending",lvl:0s}]}}
+/give JABAEK minecraft:netherite_upgrade_smithing_template
+/give @p glow_item_frame{EntityTag:{Invisible:1b}}
+
+/give JABAEK minecraft:shield
+
+//  수 산 물
+//ai 끔, 무적, 사라지지 않음, 회전, 이름과 태그  /fill 1728 112 -290
+summon villager 1728 112 -290 {NoAI:1d,Silent:1b,Invulnerable:1b,Tags:["fi"],Rotation:[-180.0f,0.0f],
+    CustomName:'{"text":"↓= 수 산 물 =↓","bold":true}',VillagerData:{level:99,profession:"minecraft:fisherman"}}
+
+    //상품을 팔 수 있는 레시피 4자리
+data modify entity @e[tag=fi,limit=1] Offers.Recipes set value [{},{},{},{},{},{}]
+
+data modify entity @e[tag=fi,limit=1] Offers.Recipes[0] set value 
+{buy:{id:"minecraft:cooked_beef",Count:64b}, buyB:{id:"minecraft:tropical_fish",Count:20b},
+sell:{id:"minecraft:iron_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=fi,limit=1] Offers.Recipes[1] set value 
+{buy:{id:"minecraft:cooked_mutton",Count:64b}, buyB:{id:"minecraft:tropical_fish",Count:20b},
+sell:{id:"minecraft:iron_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=fi,limit=1] Offers.Recipes[2] set value 
+{buy:{id:"minecraft:cooked_salmon",Count:40b}, buyB:{id:"minecraft:cooked_cod",Count:32b},
+sell:{id:"minecraft:tropical_fish",Count:1b}, maxUses:999999, xp:0, rewardExp:0}
+
+//  농 산 물
+//ai 끔, 무적, 사라지지 않음, 회전, 이름과 태그  /fill 1719 112 -290
+summon villager 1719 112 -290 {NoAI:1d,Silent:1b,Invulnerable:1b,Tags:["fe"],Rotation:[-180.0f,0.0f],
+    CustomName:'{"text":"↓= 농 산 물=↓","bold":true}',VillagerData:{level:99,profession:"minecraft:farmer"}}
+
+    //상품을 팔 수 있는 레시피 4자리
+data modify entity @e[tag=fe,limit=1] Offers.Recipes set value [{},{},{},{},{},{}]
+
+data modify entity @e[tag=fe,limit=1] Offers.Recipes[0] set value 
+{buy:{id:"poisonous_potato",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 농산물 코인 <", "italic":"false", "bold":"false", "color":"green"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"blue"}']}}}, buyB:{id:"minecraft:melon",Count:64b},
+sell:{id:"minecraft:iron_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=fe,limit=1] Offers.Recipes[1] set value 
+{buy:{id:"minecraft:potato",Count:64b}, buyB:{id:"potato",Count:32b},
+sell:{id:"poisonous_potato",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 농산물 코인 <", "italic":"false", "bold":"false", "color":"green"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"blue"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=fe,limit=1] Offers.Recipes[2] set value 
+{buy:{id:"poisonous_potato",Count:5b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 농산물 코인 <", "italic":"false", "bold":"false", "color":"green"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"blue"}']}}},
+sell:{id:"minecraft:iron_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=fe,limit=1] Offers.Recipes[3] set value 
+{buy:{id:"minecraft:carrot",Count:64b}, buyB:{id:"carrot",Count:64b},
+sell:{id:"minecraft:iron_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=fe,limit=1] Offers.Recipes[4] set value 
+{buy:{id:"minecraft:bread",Count:64b}, buyB:{id:"bread",Count:21b},
+sell:{id:"minecraft:iron_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 핀 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+
+독이든 감자 id:"poisonous_potato",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 농산물 코인 <", "italic":"false", "bold":"false", "color":"green"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"blue"}']}}
+
+-농산물-
+수박 한세트 여기서만 사고팔수있는 독감자 -> 핀 1
+감자 두세트 -> 여기서만 사고팔수있는 독감자
+독감자 5 -> 핀 1
+당근 두세트 -> 핀 1
+빵 한세트 21개 -> 핀1
+
+수박 - Melon
+감자 - Potato
+당근 - Carrot
+빵 - Bread
+
+/give JABAEK minecraft:poisonous_potato
+
+
+
+/summon text_display ~ ~.85 ~ {text:'{"text":"▶ 월드 스폰 ◀","bold":"true"}',billboard:"center",shadow:1b}
+
+
+/summon text_display ~ ~.45 ~.8 {text:'{"text":"수산물","bold":"true","color":"aqua"}',shadow:1b,background:0b,Tags:["fis"],Rotation:[-180.0f,0.0f]}
+/data merge entity @e[tag=fis,limit=1] {transformation:{scale:[4f,4f,4f]}}
+
+/summon text_display ~ ~.45 ~.8 {text:'{"text":"농산물","bold":"true","color":"green"}',shadow:1b,background:0b,Tags:["pota"],Rotation:[-180.0f,0.0f]}
+/data merge entity @e[tag=pota,limit=1] {transformation:{scale:[4f,4f,4f]}}
+
+/summon text_display ~ ~.45 ~-.8 {text:'{"text":"잡화점","bold":"true","color":"dark_purple"}',shadow:1b,background:0b,Tags:["al"]}
+/data merge entity @e[tag=al,limit=1] {transformation:{scale:[4f,4f,4f]}}
+
+/summon text_display ~ ~.45 ~-.8 {text:'{"text":"금은방","bold":"true","color":"gold"}',shadow:1b,background:0b,Tags:["go"]}
+/data merge entity @e[tag=go,limit=1] {transformation:{scale:[4f,4f,4f]}}
+
+/summon text_display ~-.49 ~.45 ~ {text:'{"text":"게시판" ,"color":"dark_aqua"}',shadow:1b,background:0b,Tags:["pos"],Rotation:[-90.0f,0.0f]}
+/summon text_display ~.49 ~.45 ~ {text:'{"text":"게시판" ,"color":"dark_aqua"}',shadow:1b,background:0b,Tags:["pos"],Rotation:[90.0f,0.0f]}
+/data merge entity @e[tag=pos,limit=1] {transformation:{scale:[4f,4f,4f]}}
+
+/team modify ja color dark_aqua
+색 바꾸기
+/summon text_display ~ ~1 ~ {text:'{"text":"내용","color":"색"}'}
+
+두껍게
+/summon text_display ~ ~1 ~ {text:'{"text":"내용","bold":"true"}'}
+
+크기 키우기
+/summon text_display ~ ~1 ~ {text:'{"text":"내용"}',Tags:["태그"]}
+
+/data merge entity @e[tag=태그,limit=1] {transformation:{scale:[숫자f,숫자f,숫자f]}}
+
+글씨에 그림자
+/summon text_display ~ ~1 ~ {text:'{"text":"내용"}',shadow:1b}
+
+배경 제거
+/summon text_display ~ ~1 ~ {text:'{"text":"내용"}',background:0b}
+
+다음 줄
+/summon text_display ~ ~1 ~ {text:'{"text":"내용\\n내용2"}'}
+
+벽 뚫기
+/summon text_display ~ ~1 ~ {text:'{"text":"내용"}',see_through:1b}
+
+시야 따라가기
+/summon text_display ~ ~1 ~ {text:'{"text":"내용"}',billboard:"center"}
+
+자동으로 세로로 쓰기
+/summon text_display ~ ~1 ~ {text:'{"text":"내용"}',line_width:0}
+
++계속 질문이 들어오는 보조 커맨드들
+
+회전
+/execute as @e[type=text_display] at @s run tp @s ~ ~ ~ ~좌우 숫자 ~위 아래 숫자
+
+
+두 개 이상 커맨드 동시 사용
+
+1.텍스트 자체 세팅 (두껍게,색 변환 등)은' {"text":"내용"}' 안 "내용" 뒤에 , 작성 후 추가 태그 넣기
+ex) 색 변경+두께 변경 - /summon text_display ~ ~1 ~ {text:'{"text":"내용","color":"색","bold":"true"}'}
+
+
+2.텍스트 자체 세 제외 나머지(따라오기,배경 제거 등)는 {text:'{"text":"내용"}'} 일 때  text:'{"text":"내용"}' 뒤에 , 를 작성 후 다른 커맨드의 추가 태그를 작성
+ex ) 두껍게+그림자 /summon text_display ~ ~1 ~ {text:'{"text":"내용","bold":"true"}',shadow:1b}
+
+
+3.크기 조절과 함께는 /summon text_display ~ ~1 ~ {text:'{"text":"내용"}',Tags:["태그"]} 에서 위처럼 작성 후 /data merge entity @e[tag=태그,limit=1] {transformation:{scale:[숫자f,숫자f,숫자f]}} 로 크기 키우기
+
+
+두 가지 색의 텍스트 한 줄에 쓰기
+/summon text_display ~ ~ ~ {text:'[{"text":"내용1","color":"색1"},{"text":"내용2","color":"색2"}]'}
+
+/title @a title {"text":">> 상점가 완공 <<","bold":true,"color":"gold"}

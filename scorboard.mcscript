@@ -1,0 +1,17 @@
+scoreboard objectives add x dummy
+
+scoreboard objectives add y dummy
+
+scoreboard objectives add z dummy
+
+execute as @a at @s run execute store result score @s x run data get entity @s Pos[0]
+
+execute as @a at @s run execute store result score @s y run data get entity @s Pos[1]
+
+execute as @a at @s run execute store result score @s z run data get entity @s Pos[2]
+
+execute as @a at @s run title @s actionbar [{"score":{"name":"@s","objective":"x"}},{"text":" "},
+{"score":{"name":"@s","objective":"y"}},{"text":" "},{"score":{"name":"@s","objective":"z"}}]
+
+
+execute as @a at @s run execute store result score @s z run data get entity @s Pos[2]

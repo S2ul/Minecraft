@@ -1,0 +1,310 @@
+//    환전소
+//ai 끔, 무적, 사라지지 않음, 회전, 이름과 태그    /fill 68 68 79  /fill 69 78 91
+summon minecraft:villager 69 78 91 {NoAI:1d, Silent:1d, Invulner:1d, PersistenceReqired:1d, Rotation:[-180.0f,0.0f], CustomName:'{"text":"↓= 환전소 =↓"}', Tags:["money"]}
+//직업을 무기 제조인, 마스터레벨
+data modify entity @e[tag=money,limit=1] VillagerData set value {profession:"minecraft:cartographer", level:5}
+//상품을 팔 수 있는 레시피 4자리
+data modify entity @e[tag=money,limit=1] Offers.Recipes set value [{},{},{},{},{},{}]
+//레시피 1번째 칸에 넣을 값, HideFlags:127 불필요한 설명을 지워줌
+data modify entity @e[tag=money,limit=1] Offers.Recipes[0] set value {buy:{id:"minecraft:diamond_block",Count:10b}, 
+sell:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+//레시피 2번째 칸
+data modify entity @e[tag=money,limit=1] Offers.Recipes[1] set value {buy:{id:"minecraft:emerald_block",Count:10b}, 
+sell:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, maxUses:999999, xp:0, rewardExp:0d}
+//레시피 3번째 칸
+data modify entity @e[tag=money,limit=1] Offers.Recipes[2] set value {buy:{id:"minecraft:iron_block",Count:10b}, buyB:{id:"minecraft:gold_block",Count:10b},
+sell:{id:"minecraft:emerald_block",Count:1b}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=money,limit=1] Offers.Recipes[3] set value {buy:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, sell:{id:"minecraft:diamond_block",Count:9b}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=money,limit=1] Offers.Recipes[4] set value {buy:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, sell:{id:"minecraft:emerald_block",Count:9b}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=money,limit=1] Offers.Recipes[5] set value {buy:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:"minecraft:iron_nugget",Count:10b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=money,limit=1] Offers.Recipes[6] set value {buy:{id:"minecraft:iron_nugget",Count:10b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+/fill 69 78 91 67 78 91
+//     책 상인           sell:{id:enchanted_book,Count:1,tag:{StoredEnchantments:[{id:mending,lvl:1}]}}  -136 78 -278
+summon minecraft:villager 67 78 91 {NoAI:1d, Silent:1d, Invulner:1d, PersistenceReqired:1d, Rotation:[-180.0f,0.0f], CustomName:'{"text":"↓= 마법 상인 =↓"}', Tags:["book"]}
+
+data modify entity @e[tag=book,limit=1] VillagerData set value {profession:"minecraft:librarian", level:5}
+
+data modify entity @e[tag=book,limit=1] Offers.Recipes set value [{},{},{},{}]
+
+data modify entity @e[tag=book,limit=1] Offers.Recipes[0] set value {buy:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:enchanted_golden_apple,Count:3}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=book,limit=1] Offers.Recipes[1] set value {buy:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:enchanted_book,Count:1,tag:{StoredEnchantments:[{id:soul_speed,lvl:2}]}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=book,limit=1] Offers.Recipes[2] set value {buy:{id:"minecraft:gold_nugget",Count:2b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:enchanted_book,Count:1,tag:{StoredEnchantments:[{id:soul_speed,lvl:3}]}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=book,limit=1] Offers.Recipes[3] set value {buy:{id:"minecraft:gold_nugget",Count:3b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:enchanted_book,Count:1,tag:{StoredEnchantments:[{id:mending,lvl:1}]}}, maxUses:999999, xp:0, rewardExp:0}
+
+
+//    보물 상인
+summon minecraft:villager 65 78 91 {NoAI:1d, Silent:1d, Invulner:1d, PersistenceReqired:1d, Rotation:[-180.0f,0.0f], CustomName:'{"text":"↓= 보물 상인 =↓"}', Tags:["R"]}
+
+data modify entity @e[tag=R,limit=1] VillagerData set value {profession:"minecraft:cleric", level:5}
+
+data modify entity @e[tag=R,limit=1] Offers.Recipes set value [{},{},{},{},{},{}]
+
+data modify entity @e[tag=R,limit=1] Offers.Recipes[0] set value {buy:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:"minecraft:sponge",Count:3b}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=R,limit=1] Offers.Recipes[1] set value {buy:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:"minecraft:lodestone",Count:1b}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=R,limit=1] Offers.Recipes[2] set value {buy:{id:"minecraft:gold_nugget",Count:2b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:"minecraft:ancient_debris",Count:1b}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=R,limit=1] Offers.Recipes[3] set value {buy:{id:"minecraft:gold_nugget",Count:7b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:"minecraft:wither_skeleton_skull",Count:1b}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=R,limit=1] Offers.Recipes[4] set value {buy:{id:"minecraft:gold_nugget",Count:9b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:"minecraft:elytra",Count:1b}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=R,limit=1] Offers.Recipes[5] set value {buy:{id:"minecraft:gold_nugget",Count:10b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:"minecraft:nether_star",Count:1b}, maxUses:999999, xp:0, rewardExp:0}
+
+
+
+//     쿠폰 상인
+summon minecraft:villager 63 78 91 {NoAI:1d, Silent:1d, Invulner:1d, PersistenceReqired:1d, Rotation:[-180.0f,0.0f], CustomName:'{"text":"↓= 쿠폰 상인 =↓"}', Tags:["C"]}
+
+data modify entity @e[tag=C,limit=1] VillagerData set value {profession:"minecraft:leatherworker", level:5}
+
+data modify entity @e[tag=C,limit=1] Offers.Recipes set value [{},{},{},{},{},{},{},{}]
+
+
+data modify entity @e[tag=C,limit=1] Offers.Recipes[0] set value {buy:{id:"minecraft:iron_nugget",Count:2b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:paper",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 배가 빵빵 포화 쿠폰 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"10분 동안 배고픔이 닳지 않는다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=C,limit=1] Offers.Recipes[1] set value {buy:{id:"minecraft:iron_nugget",Count:2b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:paper",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 스폰 귀환서 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"어디있든 스폰으로 귀환할 수 있다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=C,limit=1] Offers.Recipes[2] set value {buy:{id:"minecraft:iron_nugget",Count:2b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:paper",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 누구보다 빠르게 스피드 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"5분간 신속 2 효과를 받는다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=C,limit=1] Offers.Recipes[3] set value {buy:{id:"minecraft:iron_nugget",Count:2b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:paper",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 가벼운 몸 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"5분간 가벼운 착지 효과를 받는다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=C,limit=1] Offers.Recipes[4] set value {buy:{id:"minecraft:iron_nugget",Count:2b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:paper",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 맑은 눈동자 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"5분간 야간투시를 받는다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+
+data modify entity @e[tag=C,limit=1] Offers.Recipes[5] set value {buy:{id:"minecraft:gold_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:"minecraft:paper",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 뾰로롱 레벨 쿠폰 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"경험치 상관없이 5레벨이 오른다.","italic":"false", "color":"yellow"}',
+'{"text":"= 사용법 = 쿠폰 1장을 들고 F 누르기","italic":"false", "color":"yellow"}',
+'{"text":"※ 주의 ※ 왼손에 아이템을 들고있으면 소멸됨","italic":"false", "color":"red"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=C,limit=1] Offers.Recipes[6] set value {buy:{id:"minecraft:gold_nugget",Count:5b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:"minecraft:paper",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 시계 바늘을 돌려돌려 쿠폰 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"죽기 직전 그 순간!","italic":"false", "color":"aqua"}',
+'{"text":"인벤을 열고 스크린샷을 찍으면 아이템을 복원할 수 있다!","italic":"false", "color":"aqua"}',
+'{"text":"= 쿠폰을 가지고 JABAEK에게 말하기! 없으면 디코나 톡 =","italic":"false", "color":"yellow"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=C,limit=1] Offers.Recipes[7] set value {buy:{id:"minecraft:gold_nugget",Count:10b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:"minecraft:paper",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 요술 램프 자백 쿠폰 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"요술 램프 지니와 다르게 원하는 아이템 1개를 준다.","italic":"false", "color":"aqua"}',
+'{"text":"= 쿠폰을 가지고 JABAEK에게 말하기! 없으면 디코나 톡 =","italic":"false", "color":"yellow"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+
+
+
+// 농사 상인
+summon minecraft:villager 59 78 87 {NoAI:1d, Silent:1d, Invulner:1d, PersistenceReqired:1d, Rotation:[-90.0f,0.0f], CustomName:'{"text":"↓= 농사 상인 =↓"}', Tags:["F"]}
+
+data modify entity @e[tag=F,limit=1] VillagerData set value {profession:"minecraft:farmer", level:5}
+
+data modify entity @e[tag=F,limit=1] Offers.Recipes set value [{},{},{},{},{}]
+
+data modify entity @e[tag=F,limit=1] Offers.Recipes[0] set value {buy:{id:"minecraft:bread",Count:64b}, buyB:{id:"minecraft:apple",Count:25b}, 
+sell:{id:"minecraft:iron_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=F,limit=1] Offers.Recipes[1] set value {buy:{id:"minecraft:baked_potato",Count:64b}, buyB:{id:"minecraft:poisonous_potato",Count:15b}, 
+sell:{id:"minecraft:iron_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=F,limit=1] Offers.Recipes[2] set value {buy:{id:"minecraft:glow_berries",Count:64b}, buyB:{id:"minecraft:honey_bottle",Count:15b}, 
+sell:{id:"minecraft:iron_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=F,limit=1] Offers.Recipes[3] set value {buy:{id:"minecraft:carrot",Count:64b},  buyB:{id:"minecraft:golden_carrot",Count:64b}, 
+sell:{id:"minecraft:iron_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=F,limit=1] Offers.Recipes[4] set value {buy:{id:"minecraft:melon",Count:45b},  buyB:{id:"minecraft:glistering_melon_slice",Count:64b}, 
+sell:{id:"minecraft:iron_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=F,limit=1] Offers.Recipes[5] set value {buy:{id:"minecraft:pumpkin_pie",Count:60b}, buyB:{id:"minecraft:jack_o_lantern",Count:5b}, 
+sell:{id:"minecraft:iron_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+
+//어부 상인
+summon minecraft:villager 59 78 85 {NoAI:1d, Silent:1d, Invulner:1d, PersistenceReqired:1d, Rotation:[-90.0f,0.0f], CustomName:'{"text":"↓= 물고기 상인 =↓"}', Tags:["Fi"]}
+
+data modify entity @e[tag=Fi,limit=1] VillagerData set value {profession:"minecraft:Fisherman", level:5}
+
+data modify entity @e[tag=Fi,limit=1] Offers.Recipes set value [{},{},{}]
+
+data modify entity @e[tag=Fi,limit=1] Offers.Recipes[0] set value {buy:{id:"minecraft:cooked_cod",Count:64b}, buyB:{id:"minecraft:tropical_fish",Count:20b}, 
+sell:{id:"minecraft:iron_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=Fi,limit=1] Offers.Recipes[1] set value {buy:{id:"minecraft:cooked_salmon",Count:64b}, buyB:{id:"minecraft:pufferfish",Count:30b}, 
+sell:{id:"minecraft:iron_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=Fi,limit=1] Offers.Recipes[2] set value {buy:{id:"minecraft:iron_nugget",Count:2b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:fishing_rod",Count:1b}, maxUses:999999, xp:0, rewardExp:0}
+
+fletcher
+//잡화점
+summon minecraft:villager 59 78 83 {NoAI:1d, Silent:1d, Invulner:1d, PersistenceReqired:1d, Rotation:[-90.0f,0.0f], CustomName:'{"text":"↓= 잡화점 =↓"}', Tags:["g"]}
+
+data modify entity @e[tag=g,limit=1] VillagerData set value {profession:"minecraft:fletcher", level:5}
+
+data modify entity @e[tag=g,limit=1] Offers.Recipes set value [{},{},{},{},{}]
+
+data modify entity @e[tag=g,limit=1] Offers.Recipes[0] set value {buy:{id:"minecraft:iron_nugget",Count:15b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:bundle",Count:1b}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=g,limit=1] Offers.Recipes[1] set value {buy:{id:"minecraft:iron_nugget",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:paper",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 닉네임 색 변경권 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"원하는 색으로 닉네임을 변경해드립니다 :>","italic":"false", "color":"aqua"}',
+'{"text":"= 쿠폰을 가지고 JABAEK에게 말하기! 없으면 디코나 톡 =","italic":"false", "color":"yellow"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=g,limit=1] Offers.Recipes[2] set value {buy:{id:"minecraft:iron_nugget",Count:2b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:paper",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 닉네임 호칭 변경권 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"닉네임 앞이나 뒤에 원하는 호칭으로 변경 :>","italic":"false", "color":"aqua"}',
+'{"text":"= 쿠폰을 가지고 JABAEK에게 말하기! 없으면 디코나 톡 =","italic":"false", "color":"yellow"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=g,limit=1] Offers.Recipes[3] set value {buy:{id:"minecraft:iron_nugget",Count:2b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:paper",Count:1b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 닉네임 호칭 변경권 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"닉네임 앞이나 뒤에 원하는 호칭으로 변경 :>","italic":"false", "color":"aqua"}',
+'{"text":"= 쿠폰을 가지고 JABAEK에게 말하기! 없으면 디코나 톡 =","italic":"false", "color":"yellow"}']}}}, maxUses:999999, xp:0, rewardExp:0}
+
+data modify entity @e[tag=g,limit=1] Offers.Recipes[4] set value {buy:{id:"minecraft:iron_nugget",Count:2b,tag:{Enchantments:[{id:efficiency,lvl:5}],HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"aqua"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"gold"}']}}}, 
+sell:{id:"minecraft:gunpowder",Count:64b}, maxUses:999999, xp:0, rewardExp:0}
+
+/give JABAEK minecraft:potion{CustomPotionEffects:[{Id:28b,Amplifier:0b,Duration:6000}]}
+
+-----------------------------------------------------------------------------------------------------------------
+give JABAEK minecraft:enchanted_book{StoredEnchantments:[{id:mending,lvl:1}]}
+
+data modify entity @e[tag=0,limit=1] Offers.Recipes[0] set value {buy:{id:"minecraft:0",Count:10b}, 
+sell:{id:"minecraft:0",Count:1b,}}, maxUses:999999, xp:0, rewardExp:0d}
+
+data modify entity @e[tag=R,limit=1] Offers.Recipes[0] set value {buy:{id:"minecraft:gold_nugget",Count:3b,tag:{HideFlags:127,
+display:{Name:'{"text":"> 만득 코인 <", "italic":"false", "bold":"false", "color":"gold"}', 
+Lore:['{"text":"= 위조 방지 =","italic":"false", "color":"aqua"}']}}}, 
+sell:{id:"minecraft:enchanted_book{StoredEnchantments[id:mending,lvl:1]}",Count:1b}, maxUses:999999, xp:0, rewardExp:0d}
+
+/give JABAEK minecraft:wither_skeleton_skull           elytra         gunpowder

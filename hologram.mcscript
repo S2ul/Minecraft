@@ -1,0 +1,31 @@
+execute at @p run summon minecraft:armor_stand ~ ~ ~ 
+{NoGravity:1,Invisible:1,CustomNameVisible:1b,CustomName:'{"text":"=> 만득 상점 <=","color":"gold","bold":"true"}'}
+
+execute at @p run summon minecraft:armor_stand ~ ~ ~ 
+{NoGravity:1,Invisible:1,CustomNameVisible:1b,CustomName:'{"text":"2층","color":"blue"}','{"text":"포션 + 아이템","color":"aqua"}'}
+
+kill로 죽일 수 있음
+
+/execute at @p run summon minecraft:armor_stand -127 ~ -283 {NoGravity:1,Invisible:1,CustomNameVisible:1b,CustomName:'{"text":"♪ 거북 호수 ♪","color":"aqua"}'}
+/execute at @p run summon minecraft:armor_stand -127 ~ -283 {NoGravity:1,Invisible:1,CustomNameVisible:1b,CustomName:'{"text":"★ 만득 상점 방향 ★","color":"gold"}'}
+
+1층
+tp @p -133 65 -281
+/execute at @p run summon minecraft:armor_stand -127 ~-1 -283 {NoGravity:1,Invisible:1,CustomNameVisible:1b,CustomName:'{"text":"1층 머리 장식품","color":"aqua"}'}
+
+2층
+tp @p -135 72 -283
+/execute at @p run summon minecraft:armor_stand -133 ~-1 -288 {NoGravity:1,Invisible:1,CustomNameVisible:1b,CustomName:'{"text":"2층 포션 + 아이템","color":"aqua"}'}
+
+3층
+tp @p -133 79 -281
+/execute at @p run summon minecraft:armor_stand -135 ~-1 -288 {NoGravity:1,Invisible:1,CustomNameVisible:1b,CustomName:'{"text":"3층 만득 잡화점","color":"aqua"}'}
+/execute at @p run summon minecraft:armor_stand -127 ~-1 -285 {NoGravity:1,Invisible:1,CustomNameVisible:1b,CustomName:'{"text":"3층 만득 잡화점","color":"aqua"}'}
+
+4층
+tp @p -135 86 -283
+/execute at @p run summon minecraft:armor_stand -137 ~-1 -288 {NoGravity:1,Invisible:1,CustomNameVisible:1b,CustomName:'{"text":"4층 관계자 외 출입금지","color":"red"}'}
+/execute at @p run summon minecraft:armor_stand -127 ~-1 -287 {NoGravity:1,Invisible:1,CustomNameVisible:1b,CustomName:'{"text":"4층 관계자 외 출입금지","color":"red"}'}
+
+/summon pig ~ ~ ~ {Invisible:1,Tags:["pig"],NoAI:1,Silent:true,Saddle:1}
+/effect @e[name=돼지이름] invisibility 10000 255 true
